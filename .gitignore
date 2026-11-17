@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+client/dist/
+**/.next/
+
+# Environment files (never commit real secrets)
+.env
+**/.env
+!.env.example
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+
+# Misc
+*.tmp
+.cache/
+

@@ -1,0 +1,23 @@
+{
+  "name": "fresher-ai",
+  "version": "1.0.0",
+  "description": "Fresher.AI - Multi-Agent AI Interview Preparation Platform created by Kisara Harini",
+  "author": "Kisara Harini",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n \"GATEWAY,USER,RESUME,INTERVIEW,FEEDBACK,ROADMAP,CLIENT\" -c \"blue,green,magenta,yellow,cyan,red,white\" \"npm run dev --prefix services/api-gateway\" \"npm run dev --prefix services/user-service\" \"npm run dev --prefix services/resume-service\" \"npm run dev --prefix services/interview-service\" \"npm run dev --prefix services/feedback-service\" \"npm run dev --prefix services/roadmap-service\" \"npm run dev --prefix client\"",
+    "dev:backend": "concurrently -n \"GATEWAY,USER,RESUME,INTERVIEW,FEEDBACK,ROADMAP\" -c \"blue,green,magenta,yellow,cyan,red\" \"npm run dev --prefix services/api-gateway\" \"npm run dev --prefix services/user-service\" \"npm run dev --prefix services/resume-service\" \"npm run dev --prefix services/interview-service\" \"npm run dev --prefix services/feedback-service\" \"npm run dev --prefix services/roadmap-service\"",
+    "seed": "node seed.js",
+    "test": "node --test tests/*.test.js",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.5"
+  },
+  "dependencies": {
+    "mongoose": "^9.11.4"
+  }
+}
